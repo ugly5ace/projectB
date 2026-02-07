@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Меню — Shakar Somsa</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<h1 class="logo">Shakar Somsa</h1>
+<p class="phone">📞 93 151 20 20</p>
+
+<form method="post" action="/order">
+
+<div class="menu">
+{% for item in menu %}
+<div class="card">
+    {% if item.popular %}
+        <div class="badge">⭐ Популярное</div>
+    {% endif %}
+    <img src="{{ url_for('static', filename='images/' + item.image) }}">
+    <h3>{{ item.name }}</h3>
+    <p>{{ item.price }} сум</p>
+
+    <input type="number" name="{{ item.id }}" min="0" value="0">
+</div>
+{% endfor %}
+</div>
+
+<button class="order-btn">Заказать</button>
+</form>
+
+</body>
+</html>

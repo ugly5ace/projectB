@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% set title = "Yapona Mama — Прогноз" %}
+
+{% block content %}
+<h1 class="page-title">Прогноз (Data Science)</h1>
+
+<div class="grid">
+  <div class="card">
+    <h2>Краткие показатели</h2>
+    <div class="kpi">
+      <div class="kpi-row">
+        <span class="kpi-label">Среднее клиентов в месяц</span>
+        <span class="kpi-value">{{ stats.avg_clients }}</span>
+      </div>
+
+      <div class="kpi-row">
+        <span class="kpi-label">Рост в месяц (примерно)</span>
+        <span class="kpi-value kpi-up">+{{ "%.1f"|format(stats.monthly_growth_pct) }}%</span>
+      </div>
+
+      <div class="kpi-row">
+        <span class="kpi-label">Рост в год (оценка)</span>
+        <span class="kpi-value kpi-up">+{{ "%.1f"|format(stats.yearly_growth_pct) }}%</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Качество модели</h2>
+    <p class="muted">Метрики рассчитаны на обучающих данных (демонстрационно).</p>
+    <div class="kpi">
+      <div class="kpi-row">
+        <span class="kpi-label">MAE</span>
+        <span class="kpi-value">{{ "%.2f"|format(stats.mae) }}</span>
+      </div>
+      <div class="kpi-row">
+        <span class="kpi-label">R²</span>
+        <span class="kpi-value">{{ "%.2f"|format(stats.r2) }}</span>
+      </div>
+    </div>
+
+    <h3 class="sub-title">Прогноз на 3 месяца</h3>
+    <div class="forecast-list">
+      <div class="pill">{{ stats.forecast_next_3[0] }} клиентов</div>
+      <div class="pill">{{ stats.forecast_next_3[1] }} клиентов</div>
+      <div class="pill">{{ stats.forecast_next_3[2] }} клиентов</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <h2>График роста клиентов</h2>
+  <p class="muted">Файл: static/forecast.png (создаётся автоматически при открытии этой страницы).</p>
+  <img class="forecast-img" src="{{ url_for('static', filename='forecast.png') }}" alt="График прогноза">
+</div>
+{% endblock %}

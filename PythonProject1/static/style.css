@@ -1,0 +1,72 @@
+body {
+    background: #0a1a2f;
+    font-family: Arial;
+    color: orange;
+    text-align: center;
+}
+
+.logo {
+    color: orange;
+    font-size: 36px;
+    margin-top: 30px;
+}
+
+.card {
+    background: #112240;
+    padding: 30px;
+    width: 300px;
+    margin: 100px auto;
+    border-radius: 10px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background: orange;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: darkorange;
+}
+.menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    background: #112240;
+    border-radius: 12px;
+    padding: 15px;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.badge {
+    background: orange;
+    color: black;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 12px;
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.order-btn {
+    margin: 30px auto;
+    display: block;
+    width: 200px;
+}

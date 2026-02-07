@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>{{ title if title else "Yapona Mama" }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<header class="header">
+  <div class="container header-row">
+    <div class="brand">
+      <div class="brand-title">Yapona Mama</div>
+      <div class="brand-subtitle">Ташкент · меню · аналитика · прогноз</div>
+    </div>
+
+    <nav class="nav">
+      <a href="{{ url_for('home') }}">Главная</a>
+      <a href="{{ url_for('menu') }}">Меню</a>
+      <a href="{{ url_for('forecast') }}">Прогноз</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  {% block content %}{% endblock %}
+</main>
+
+<footer class="footer">
+  <div class="container footer-row">
+    <div>Учебный проект (Data Science + Web)</div>
+    <div>Python · Flask · scikit-learn</div>
+  </div>
+</footer>
+
+</body>
+</html>
+salom chort

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Админ</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<h1 class="logo">TAJ FOOD — ADMIN</h1>
+
+<h2>Клиенты</h2>
+<ul>
+{% for u in users %}
+    <li>{{ u.email }} — {{ u.phone }}</li>
+{% endfor %}
+</ul>
+
+<h2>Заказы</h2>
+<ul>
+{% for o in orders %}
+    <li>{{ o.email }} заказал: {{ o.food }}</li>
+{% endfor %}
+</ul>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% set title = "Yapona Mama — Главная" %}
+
+{% block content %}
+<section class="hero">
+  <div class="hero-card">
+    <h1 class="hero-title">Yapona Mama</h1>
+    <p class="hero-text">
+      Демонстрационный сайт ресторана с модулем Data Science:
+      анализ и прогноз количества клиентов по месяцам.
+    </p>
+
+    <div class="hero-actions">
+      <a class="btn" href="{{ url_for('menu') }}">Открыть меню</a>
+      <a class="btn btn-outline" href="{{ url_for('forecast') }}">Посмотреть прогноз</a>
+    </div>
+  </div>
+</section>
+
+<section class="grid">
+  <div class="card">
+    <h2>Меню</h2>
+    <p>Карточки блюд с фото, ценой и коротким описанием.</p>
+  </div>
+
+  <div class="card">
+    <h2>Data Science</h2>
+    <p>Модель линейной регрессии для прогнозирования количества клиентов.</p>
+  </div>
+
+  <div class="card">
+    <h2>Визуализация</h2>
+    <p>График сохраняется на сервере и отображается на странице прогноза.</p>
+  </div>
+</section>
+{% endblock %}
